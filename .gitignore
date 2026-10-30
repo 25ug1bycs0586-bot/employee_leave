@@ -1,0 +1,32 @@
+# Dependencies
+node_modules/
+
+# Local configuration and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Local app data, uploaded documents, and runtime output
+data/
+uploads/
+*.log
+npm-debug.log*
+
+# Build and test output
+dist/
+build/
+coverage/
+.nyc_output/
+
+# Temporary and editor files
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
