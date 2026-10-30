@@ -15,10 +15,13 @@ const { LocalModel, initialize: initializeStore } = require("./local-store");
 const app = express();
 const PORT = Number(process.env.PORT) || 3001;
 let JWT_SECRET = process.env.JWT_SECRET;
-const uploadDirectory = path.join(__dirname, "uploads");
-const dataDirectory = path.join(__dirname, "data");
+const baseDir = process.env.VERCEL?"/tmp":__dirname;
+const uploadDirectory = path.join(baseDir, "uploads");
+const dataDirectory=path.join(baseDir,"data");
+
 
 fs.mkdirSync(uploadDirectory, { recursive: true });
+fs.mkdirSync(dataDirectory, { recursive: true });
 
 const balanceDefaults = {
   casual: 12,
